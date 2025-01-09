@@ -8,7 +8,13 @@ class CinemaFilterHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 85,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(15),
+          ),
+          //side: BorderSide(width: 1, color: Color.fromARGB(255, 0, 174, 255)),
+        ),
+        toolbarHeight: 100,
         backgroundColor: Color(0xFF382F42),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
