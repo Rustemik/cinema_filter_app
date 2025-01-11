@@ -20,17 +20,18 @@ class _CartListFilterState extends State<CinemaListFilter> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
       child: Column(
         children: [
           SizedBox(height: 10),
           Container(
-            height: 50,
+            height: 60,
             width: double.infinity,
             child: TextField(
               decoration: InputDecoration(
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide(color: Colors.amber),
+                    borderRadius: BorderRadius.circular(30),
                   ),
                   fillColor: const Color.fromARGB(255, 243, 243, 243),
                   filled: true,
@@ -47,119 +48,157 @@ class _CartListFilterState extends State<CinemaListFilter> {
             ),
           ),
           SizedBox(height: 10),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                children: [
-                  Radio(
-                    activeColor: Color.fromARGB(255, 0, 174, 255),
-                    value: null,
-                    groupValue: selectedCategory,
-                    onChanged: (value) {
-                      setState(() {
-                        selectedCategory = value;
-                      });
-                    },
+
+          Align(
+            alignment: Alignment.bottomRight,
+            child: DropdownMenu(
+              inputDecorationTheme: InputDecorationTheme(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(30),
                   ),
-                  Text(
-                    'Все',
-                    style: categoryTitleStyle,
-                  ),
-                ],
+                ),
+                // hoverColor: Colors.red,
+                // focusColor: Colors.red,
+                // fillColor: Colors.red,
               ),
-              Column(
-                children: [
-                  Radio(
-                    activeColor: Color.fromARGB(255, 0, 174, 255),
-                    value: Categories.Fantasy,
-                    groupValue: selectedCategory,
-                    onChanged: (value) {
-                      setState(() {
-                        selectedCategory = value;
-                      });
-                    },
-                  ),
-                  Text(
-                    'Фантастика',
-                    style: categoryTitleStyle,
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  Radio(
-                    activeColor: Color.fromARGB(255, 0, 174, 255),
-                    value: Categories.Action,
-                    groupValue: selectedCategory,
-                    onChanged: (value) {
-                      setState(() {
-                        selectedCategory = value;
-                      });
-                    },
-                  ),
-                  Text(
-                    'Боевик',
-                    style: categoryTitleStyle,
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  Radio(
-                    activeColor: Color.fromARGB(255, 0, 174, 255),
-                    value: Categories.Drama,
-                    groupValue: selectedCategory,
-                    onChanged: (value) {
-                      setState(() {
-                        selectedCategory = value;
-                      });
-                    },
-                  ),
-                  Text(
-                    'Драма',
-                    style: categoryTitleStyle,
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  Radio(
-                    activeColor: Color.fromARGB(255, 0, 174, 255),
-                    value: Categories.Thriller,
-                    groupValue: selectedCategory,
-                    onChanged: (value) {
-                      setState(() {
-                        selectedCategory = value;
-                      });
-                    },
-                  ),
-                  Text(
-                    'Триллер',
-                    style: categoryTitleStyle,
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  Radio(
-                    activeColor: Color.fromARGB(255, 0, 174, 255),
-                    value: Categories.History,
-                    groupValue: selectedCategory,
-                    onChanged: (value) {
-                      setState(() {
-                        selectedCategory = value;
-                      });
-                    },
-                  ),
-                  Text(
-                    'История',
-                    style: categoryTitleStyle,
-                  ),
-                ],
-              ),
-            ],
+              onSelected: (value) {
+                setState(() {
+                  selectedCategory = value;
+                });
+              },
+
+              initialSelection: Colors.amber, //Color(0xFF382F42),
+              label: Text('Жанр'),
+              width: 180, //width: double.infinity,
+              dropdownMenuEntries: const <DropdownMenuEntry>[
+                DropdownMenuEntry(
+                  value: null,
+                  label: 'Все',
+                ),
+                DropdownMenuEntry(
+                    value: Categories.Fantasy, label: 'Фантастика'),
+                DropdownMenuEntry(value: Categories.Action, label: 'Боевик'),
+                DropdownMenuEntry(value: Categories.Drama, label: 'Драма'),
+                DropdownMenuEntry(value: Categories.Thriller, label: 'Триллер'),
+                DropdownMenuEntry(value: Categories.History, label: 'История'),
+              ],
+            ),
           ),
+
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //   children: [
+          //     Column(
+          //       children: [
+          //         Radio(
+          //           activeColor: Color.fromARGB(255, 0, 174, 255),
+          //           value: null,
+          //           groupValue: selectedCategory,
+          //           onChanged: (value) {
+          //             setState(() {
+          //               selectedCategory = value;
+          //             });
+          //           },
+          //         ),
+          //         Text(
+          //           'Все',
+          //           style: categoryTitleStyle,
+          //         ),
+          //       ],
+          //     ),
+          //     Column(
+          //       children: [
+          //         Radio(
+          //           activeColor: Color.fromARGB(255, 0, 174, 255),
+          //           value: Categories.Fantasy,
+          //           groupValue: selectedCategory,
+          //           onChanged: (value) {
+          //             setState(() {
+          //               selectedCategory = value;
+          //             });
+          //           },
+          //         ),
+          //         Text(
+          //           'Фантастика',
+          //           style: categoryTitleStyle,
+          //         ),
+          //       ],
+          //     ),
+          //     Column(
+          //       children: [
+          //         Radio(
+          //           activeColor: Color.fromARGB(255, 0, 174, 255),
+          //           value: Categories.Action,
+          //           groupValue: selectedCategory,
+          //           onChanged: (value) {
+          //             setState(() {
+          //               selectedCategory = value;
+          //             });
+          //           },
+          //         ),
+          //         Text(
+          //           'Боевик',
+          //           style: categoryTitleStyle,
+          //         ),
+          //       ],
+          //     ),
+          //     Column(
+          //       children: [
+          //         Radio(
+          //           activeColor: Color.fromARGB(255, 0, 174, 255),
+          //           value: Categories.Drama,
+          //           groupValue: selectedCategory,
+          //           onChanged: (value) {
+          //             setState(() {
+          //               selectedCategory = value;
+          //             });
+          //           },
+          //         ),
+          //         Text(
+          //           'Драма',
+          //           style: categoryTitleStyle,
+          //         ),
+          //       ],
+          //     ),
+          //     Column(
+          //       children: [
+          //         Radio(
+          //           activeColor: Color.fromARGB(255, 0, 174, 255),
+          //           value: Categories.Thriller,
+          //           groupValue: selectedCategory,
+          //           onChanged: (value) {
+          //             setState(() {
+          //               selectedCategory = value;
+          //             });
+          //           },
+          //         ),
+          //         Text(
+          //           'Триллер',
+          //           style: categoryTitleStyle,
+          //         ),
+          //       ],
+          //     ),
+          //     Column(
+          //       children: [
+          //         Radio(
+          //           activeColor: Color.fromARGB(255, 0, 174, 255),
+          //           value: Categories.History,
+          //           groupValue: selectedCategory,
+          //           onChanged: (value) {
+          //             setState(() {
+          //               selectedCategory = value;
+          //             });
+          //           },
+          //         ),
+          //         Text(
+          //           'История',
+          //           style: categoryTitleStyle,
+          //         ),
+          //       ],
+          //     ),
+          //   ],
+          // ),
           SizedBox(height: 20),
           Expanded(child: CinemaList(filter, selectedCategory)),
         ],
