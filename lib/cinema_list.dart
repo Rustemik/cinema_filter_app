@@ -1,4 +1,4 @@
-import 'package:cinema_filter_app/cinema_item.dart';
+import 'package:cinema_filter_app/cinema_card.dart';
 import 'package:cinema_filter_app/models/cinema_model.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +22,7 @@ class CinemaList extends StatelessWidget {
 
     return ListView.builder(
       itemCount: filteredItems.length,
-      itemBuilder: (context, index) => CinemaItem(item: filteredItems[index]),
+      itemBuilder: (context, index) => CinemaCard(item: filteredItems[index]),
     );
   }
 }

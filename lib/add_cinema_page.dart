@@ -2,14 +2,14 @@ import 'package:cinema_filter_app/cinema_list_filter.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
-class CinemaFilterHome extends StatefulWidget {
-  const CinemaFilterHome({super.key});
+class AddCinemaPage extends StatefulWidget {
+  const AddCinemaPage({super.key});
 
   @override
-  State<CinemaFilterHome> createState() => _CinemaFilterHomeState();
+  State<AddCinemaPage> createState() => _CinemaFilterHomeState();
 }
 
-class _CinemaFilterHomeState extends State<CinemaFilterHome> {
+class _CinemaFilterHomeState extends State<AddCinemaPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,25 +40,6 @@ class _CinemaFilterHomeState extends State<CinemaFilterHome> {
           ),
         ],
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   items: <BottomNavigationBarItem>[
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.home),
-      //       label: 'Home',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.business),
-      //       label: 'Business',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.favorite),
-      //       label: 'Favorites',
-      //     ),
-      //   ],
-      //   // currentIndex: _selectedIndex,
-      //   // selectedItemColor: Colors.amber[800],
-      //   // onTap: _onItemTapped,
-      // ),
       appBar: AppBar(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
@@ -123,7 +104,6 @@ class _CinemaFilterHomeState extends State<CinemaFilterHome> {
         // ),
         //elevation: 0,
       ),
-
       body: CinemaListFilter(),
     );
   }
