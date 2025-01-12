@@ -1,4 +1,6 @@
+import 'package:cinema_filter_app/add_cinema_screen.dart';
 import 'package:cinema_filter_app/cinema_list_filter.dart';
+import 'package:cinema_filter_app/favorite_cinema_sceen.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -10,55 +12,25 @@ class CinemaFilterHome extends StatefulWidget {
 }
 
 class _CinemaFilterHomeState extends State<CinemaFilterHome> {
+  final items = [
+    Icon(Icons.home, size: 25),
+    Icon(Icons.favorite, size: 25),
+    Icon(Icons.add, size: 25),
+  ];
+  int index = 0;
+
+  final screens = [
+    CinemaListFilter(),
+    FavoriteCinemaSceen(),
+    AddCinemaScreen(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //extendBody: true,
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
-      bottomNavigationBar: CurvedNavigationBar(
-        height: 50,
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
-        color: Color(0xFF382F42),
-        //animationDuration: Duration(microseconds: 300),
-        onTap: (index) {
-          setState(() {});
-        },
-        items: [
-          Icon(
-            Icons.home,
-            color: Color.fromARGB(255, 0, 174, 255),
-            //size: 20,
-          ),
-          Icon(
-            Icons.add,
-            color: Color.fromARGB(255, 0, 174, 255),
-            size: 40,
-          ),
-          Icon(
-            Icons.favorite,
-            color: Color.fromARGB(255, 0, 174, 255),
-            //size: 20,
-          ),
-        ],
-      ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   items: <BottomNavigationBarItem>[
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.home),
-      //       label: 'Home',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.business),
-      //       label: 'Business',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.favorite),
-      //       label: 'Favorites',
-      //     ),
-      //   ],
-      //   // currentIndex: _selectedIndex,
-      //   // selectedItemColor: Colors.amber[800],
-      //   // onTap: _onItemTapped,
-      // ),
+
       appBar: AppBar(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
@@ -124,7 +96,75 @@ class _CinemaFilterHomeState extends State<CinemaFilterHome> {
         //elevation: 0,
       ),
 
-      body: CinemaListFilter(),
+      body: screens[index],
+      //extendBody: true,
+      bottomNavigationBar: Theme(
+        data: Theme.of(context).copyWith(
+          iconTheme: IconThemeData(color: Color.fromARGB(255, 0, 174, 255)),
+        ),
+        child: CurvedNavigationBar(
+          items: items,
+          index: index,
+          onTap: (index) => setState(() => this.index = index),
+          backgroundColor: Colors.transparent,
+          color: Color(0xFF382F42),
+          //buttonBackgroundColor: Colors.amber,
+          height: 55,
+          animationDuration: Duration(milliseconds: 300),
+        ),
+      ),
+
+      // bottomNavigationBar: CurvedNavigationBar(
+      //   items: items,
+      //   index: index,
+      //   onTap: (selectedIndex) {
+      //     setState(() {
+      //       index = selectedIndex;
+      //     });
+      //   },
+      //   height: 50,
+      //   backgroundColor: Color.fromARGB(255, 255, 255, 255),
+      //   color: Color(0xFF382F42),
+      //   animationDuration: Duration(milliseconds: 300),
+      // ),
+
+      // bottomNavigationBar: BottomNavigationBar(
+      //   items: <BottomNavigationBarItem>[
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.home),
+      //       label: 'Home',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.business),
+      //       label: 'Business',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.favorite),
+      //       label: 'Favorites',
+      //     ),
+      //   ],
+      //   // currentIndex: _selectedIndex,
+      //   // selectedItemColor: Colors.amber[800],
+      //   // onTap: _onItemTapped,
+      // ),
     );
   }
 }
+
+// Widget getSelectedWidget({required int index}) {
+//   Widget widget;
+//   switch (index) {
+//     case 0:
+//       widget = CinemaFilterHome();
+//       break;
+//     case 1:
+//       widget = AddCinemaPage();
+//       break;
+//     default:
+//       widget = CinemaFilterHome();
+//       break;
+//   }
+//   return widget;
+// }
+
+//child: getSelectedWidget(index: index),

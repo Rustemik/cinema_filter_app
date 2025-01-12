@@ -37,7 +37,7 @@ class _CartListFilterState extends State<CinemaListFilter> {
                   filled: true,
                   labelText: 'Поиск фильма',
                   labelStyle: TextStyle(
-                    color: Color(0xFF382F42),
+                    color: Color.fromARGB(255, 108, 108, 108),
                     fontWeight: FontWeight.bold,
                   )),
               onChanged: (newValue) => {
@@ -53,15 +53,14 @@ class _CartListFilterState extends State<CinemaListFilter> {
             alignment: Alignment.bottomRight,
             child: DropdownMenu(
               inputDecorationTheme: InputDecorationTheme(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(30),
+                  border: OutlineInputBorder(
+                    borderRadius: const BorderRadius.all(
+                      const Radius.circular(30),
+                    ),
                   ),
-                ),
-                // hoverColor: Colors.red,
-                // focusColor: Colors.red,
-                // fillColor: Colors.red,
-              ),
+                  hoverColor: Colors.red,
+                  focusColor: Colors.red,
+                  fillColor: Colors.red),
               onSelected: (value) {
                 setState(() {
                   selectedCategory = value;
@@ -71,7 +70,7 @@ class _CartListFilterState extends State<CinemaListFilter> {
               initialSelection: Colors.amber, //Color(0xFF382F42),
               label: Text('Жанр'),
               width: 180, //width: double.infinity,
-              dropdownMenuEntries: const <DropdownMenuEntry>[
+              dropdownMenuEntries: <DropdownMenuEntry>[
                 DropdownMenuEntry(
                   value: null,
                   label: 'Все',
@@ -199,6 +198,7 @@ class _CartListFilterState extends State<CinemaListFilter> {
           //     ),
           //   ],
           // ),
+
           SizedBox(height: 20),
           Expanded(child: CinemaList(filter, selectedCategory)),
         ],
