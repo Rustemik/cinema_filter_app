@@ -1,6 +1,6 @@
 import 'package:cinema_filter_app/add_cinema_screen.dart';
 import 'package:cinema_filter_app/cinema_list_filter.dart';
-import 'package:cinema_filter_app/favorite_cinema_sceen.dart';
+import 'package:cinema_filter_app/favorite_cinema_screen.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +21,7 @@ class _CinemaFilterHomeState extends State<CinemaFilterHome> {
 
   final screens = [
     CinemaListFilter(),
-    FavoriteCinemaSceen(),
+    FavoriteCinemaScreen(),
     AddCinemaScreen(),
   ];
 

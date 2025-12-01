@@ -1,7 +1,7 @@
 import 'package:cinema_filter_app/models/cinema_model.dart';
 import 'package:flutter/material.dart';
 
-class FavoriteCinemaSceen extends StatelessWidget {
+class FavoriteCinemaScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
