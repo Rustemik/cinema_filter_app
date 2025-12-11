@@ -19,10 +19,9 @@ class CinemaList extends StatelessWidget {
         .where(
             (c) => selectedCategory == null || c.category == selectedCategory)
         .toList();
-
     return ListView.builder(
       itemCount: filteredItems.length,
-      itemBuilder: (context, index) => CinemaCard(item: filteredItems[index]),
+      itemBuilder: (context, index) => CinemaCard(model: filteredItems[index]),
     );
   }
 }

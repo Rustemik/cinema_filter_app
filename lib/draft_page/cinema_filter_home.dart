@@ -1,4 +1,4 @@
-import 'package:cinema_filter_app/add_cinema_screen.dart';
+import 'package:cinema_filter_app/draft_page/add_cinema_screen.dart';
 import 'package:cinema_filter_app/cinema_list_filter.dart';
 import 'package:cinema_filter_app/favorite_cinema_screen.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';

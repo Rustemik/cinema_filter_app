@@ -1,4 +1,3 @@
-import 'package:cinema_filter_app/styles/colors.dart';
 import 'package:flutter/material.dart';
 
 // const TextStyle appBarTitleStyle = TextStyle(

@@ -1,5 +1,6 @@
 import 'package:cinema_filter_app/cinema_list.dart';
 import 'package:cinema_filter_app/models/cinema_model.dart';
+import 'package:cinema_filter_app/styles/colors.dart';
 import 'package:cinema_filter_app/styles/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,8 @@ class CinemaListFilter extends StatefulWidget {
 }
 
 class _CartListFilterState extends State<CinemaListFilter> {
+  //final words = CinemaCard(model: cinemaItems.first);
+
   String filter = '';
   Categories? selectedCategory = null;
   final filterController = TextEditingController();
@@ -48,14 +51,13 @@ class _CartListFilterState extends State<CinemaListFilter> {
             ),
           ),
           SizedBox(height: 10),
-
           Align(
             alignment: Alignment.bottomRight,
             child: DropdownMenu(
-              inputDecorationTheme: InputDecorationTheme(
+              inputDecorationTheme: const InputDecorationTheme(
                   border: OutlineInputBorder(
-                    borderRadius: const BorderRadius.all(
-                      const Radius.circular(30),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(30),
                     ),
                   ),
                   hoverColor: Colors.red,
@@ -66,11 +68,10 @@ class _CartListFilterState extends State<CinemaListFilter> {
                   selectedCategory = value;
                 });
               },
-
-              initialSelection: Colors.amber, //Color(0xFF382F42),
-              label: Text('Жанр'),
-              width: 180, //width: double.infinity,
-              dropdownMenuEntries: <DropdownMenuEntry>[
+              initialSelection: appBarcolor,
+              label: const Text('Жанр'),
+              width: 180,
+              dropdownMenuEntries: const <DropdownMenuEntry>[
                 DropdownMenuEntry(
                   value: null,
                   label: 'Все',
@@ -84,122 +85,7 @@ class _CartListFilterState extends State<CinemaListFilter> {
               ],
             ),
           ),
-
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //   children: [
-          //     Column(
-          //       children: [
-          //         Radio(
-          //           activeColor: Color.fromARGB(255, 0, 174, 255),
-          //           value: null,
-          //           groupValue: selectedCategory,
-          //           onChanged: (value) {
-          //             setState(() {
-          //               selectedCategory = value;
-          //             });
-          //           },
-          //         ),
-          //         Text(
-          //           'Все',
-          //           style: categoryTitleStyle,
-          //         ),
-          //       ],
-          //     ),
-          //     Column(
-          //       children: [
-          //         Radio(
-          //           activeColor: Color.fromARGB(255, 0, 174, 255),
-          //           value: Categories.Fantasy,
-          //           groupValue: selectedCategory,
-          //           onChanged: (value) {
-          //             setState(() {
-          //               selectedCategory = value;
-          //             });
-          //           },
-          //         ),
-          //         Text(
-          //           'Фантастика',
-          //           style: categoryTitleStyle,
-          //         ),
-          //       ],
-          //     ),
-          //     Column(
-          //       children: [
-          //         Radio(
-          //           activeColor: Color.fromARGB(255, 0, 174, 255),
-          //           value: Categories.Action,
-          //           groupValue: selectedCategory,
-          //           onChanged: (value) {
-          //             setState(() {
-          //               selectedCategory = value;
-          //             });
-          //           },
-          //         ),
-          //         Text(
-          //           'Боевик',
-          //           style: categoryTitleStyle,
-          //         ),
-          //       ],
-          //     ),
-          //     Column(
-          //       children: [
-          //         Radio(
-          //           activeColor: Color.fromARGB(255, 0, 174, 255),
-          //           value: Categories.Drama,
-          //           groupValue: selectedCategory,
-          //           onChanged: (value) {
-          //             setState(() {
-          //               selectedCategory = value;
-          //             });
-          //           },
-          //         ),
-          //         Text(
-          //           'Драма',
-          //           style: categoryTitleStyle,
-          //         ),
-          //       ],
-          //     ),
-          //     Column(
-          //       children: [
-          //         Radio(
-          //           activeColor: Color.fromARGB(255, 0, 174, 255),
-          //           value: Categories.Thriller,
-          //           groupValue: selectedCategory,
-          //           onChanged: (value) {
-          //             setState(() {
-          //               selectedCategory = value;
-          //             });
-          //           },
-          //         ),
-          //         Text(
-          //           'Триллер',
-          //           style: categoryTitleStyle,
-          //         ),
-          //       ],
-          //     ),
-          //     Column(
-          //       children: [
-          //         Radio(
-          //           activeColor: Color.fromARGB(255, 0, 174, 255),
-          //           value: Categories.History,
-          //           groupValue: selectedCategory,
-          //           onChanged: (value) {
-          //             setState(() {
-          //               selectedCategory = value;
-          //             });
-          //           },
-          //         ),
-          //         Text(
-          //           'История',
-          //           style: categoryTitleStyle,
-          //         ),
-          //       ],
-          //     ),
-          //   ],
-          // ),
-
-          SizedBox(height: 20),
+          SizedBox(height: 10),
           Expanded(child: CinemaList(filter, selectedCategory)),
         ],
       ),
