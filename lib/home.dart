@@ -15,16 +15,16 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final items = [
-    Icon(Icons.home, size: 25),
-    Icon(Icons.favorite, size: 25),
-    Icon(Icons.add, size: 25),
+    const Icon(Icons.home, size: 25),
+    const Icon(Icons.favorite, size: 25),
+    const Icon(Icons.add, size: 25),
   ];
 
   int index = 0;
 
   final screens = [
-    CinemaListFilter(),
-    FavoritePage(),
+    const CinemaListFilter(),
+    const FavoritePage(),
     //FavoriteCinemaScreen(),
     //AddCinemaScreen(),
   ];
@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(30),
           ),
@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                     offset: const Offset(1, 1),
                   )
                 ],
-                image: DecorationImage(
+                image: const DecorationImage(
                   image: AssetImage(
                     'assets/images/popcorn.png',
                   ),
@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                 shape: BoxShape.circle,
               ),
             ),
-            SizedBox(width: 13),
+            const SizedBox(width: 13),
             Text(
               "КиноФильтр",
               style: TextStyle(

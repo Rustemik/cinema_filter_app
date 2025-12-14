@@ -1,7 +1,6 @@
 import 'package:cinema_filter_app/cinema_list.dart';
 import 'package:cinema_filter_app/models/cinema_model.dart';
 import 'package:cinema_filter_app/styles/colors.dart';
-import 'package:cinema_filter_app/styles/styles.dart';
 import 'package:flutter/material.dart';
 
 class CinemaListFilter extends StatefulWidget {
@@ -26,20 +25,20 @@ class _CartListFilterState extends State<CinemaListFilter> {
       padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
       child: Column(
         children: [
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Container(
             height: 60,
             width: double.infinity,
             child: TextField(
               decoration: InputDecoration(
                   border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.amber),
+                    borderSide: const BorderSide(color: Colors.amber),
                     borderRadius: BorderRadius.circular(30),
                   ),
                   fillColor: const Color.fromARGB(255, 243, 243, 243),
                   filled: true,
                   labelText: 'Поиск фильма',
-                  labelStyle: TextStyle(
+                  labelStyle: const TextStyle(
                     color: Color.fromARGB(255, 108, 108, 108),
                     fontWeight: FontWeight.bold,
                   )),
@@ -50,7 +49,7 @@ class _CartListFilterState extends State<CinemaListFilter> {
               },
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Align(
             alignment: Alignment.bottomRight,
             child: DropdownMenu(
@@ -85,7 +84,7 @@ class _CartListFilterState extends State<CinemaListFilter> {
               ],
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Expanded(child: CinemaList(filter, selectedCategory)),
         ],
       ),

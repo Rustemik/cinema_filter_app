@@ -12,9 +12,9 @@ class BottomNavigationBar extends StatefulWidget {
 
 class _BottomNavigationBarState extends State<BottomNavigationBar> {
   final items = [
-    Icon(Icons.home, size: 25),
-    Icon(Icons.favorite, size: 25),
-    Icon(Icons.add, size: 25),
+    const Icon(Icons.home, size: 25),
+    const Icon(Icons.favorite, size: 25),
+    const Icon(Icons.add, size: 25),
   ];
 
   int index = 0;

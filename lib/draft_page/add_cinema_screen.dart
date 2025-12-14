@@ -13,10 +13,10 @@ class AddCinemaScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
-              Text(
+              const Text(
                 'Добавить фильм',
                 style: TextStyle(
                   color: Colors.black,
@@ -25,7 +25,7 @@ class AddCinemaScreen extends StatelessWidget {
                   fontFamily: 'Rostov',
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Container(
                 child: TextFormField(
                   decoration: InputDecoration(
@@ -35,17 +35,17 @@ class AddCinemaScreen extends StatelessWidget {
                     ),
                     fillColor: const Color.fromARGB(255, 243, 243, 243),
                     filled: true,
-                    labelStyle: TextStyle(
+                    labelStyle: const TextStyle(
                       color: Color.fromARGB(255, 93, 93, 93),
                       fontWeight: FontWeight.normal,
                     ),
                   ),
                   keyboardType: TextInputType.name,
-                  style: TextStyle(fontSize: 20.0, color: Colors.black),
+                  style: const TextStyle(fontSize: 20.0, color: Colors.black),
                 ),
                 width: double.infinity,
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Container(
                 child: TextFormField(
                   decoration: InputDecoration(
@@ -55,19 +55,19 @@ class AddCinemaScreen extends StatelessWidget {
                     ),
                     fillColor: const Color.fromARGB(255, 243, 243, 243),
                     filled: true,
-                    labelStyle: TextStyle(
+                    labelStyle: const TextStyle(
                       color: Color.fromARGB(255, 93, 93, 93),
                       fontWeight: FontWeight.normal,
                     ),
                   ),
                   //obscureText: true,
                   //keyboardType: TextInputType.name,
-                  style: TextStyle(fontSize: 20.0, color: Colors.black),
+                  style: const TextStyle(fontSize: 20.0, color: Colors.black),
                 ),
                 width: double.infinity,
-                padding: EdgeInsets.only(top: 10.0),
+                padding: const EdgeInsets.only(top: 10.0),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Container(
                 child: TextFormField(
                   decoration: InputDecoration(
@@ -77,25 +77,25 @@ class AddCinemaScreen extends StatelessWidget {
                     ),
                     fillColor: const Color.fromARGB(255, 243, 243, 243),
                     filled: true,
-                    labelStyle: TextStyle(
+                    labelStyle: const TextStyle(
                       color: Color.fromARGB(255, 93, 93, 93),
                       fontWeight: FontWeight.normal,
                     ),
                   ),
                   //obscureText: true,
-                  style: TextStyle(fontSize: 20.0, color: Colors.black),
+                  style: const TextStyle(fontSize: 20.0, color: Colors.black),
                 ),
                 width: double.infinity,
-                padding: EdgeInsets.only(top: 10.0),
+                padding: const EdgeInsets.only(top: 10.0),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Align(
                 alignment: Alignment.center,
                 child: DropdownMenu(
-                  inputDecorationTheme: InputDecorationTheme(
+                  inputDecorationTheme: const InputDecorationTheme(
                       border: OutlineInputBorder(
-                        borderRadius: const BorderRadius.all(
-                          const Radius.circular(30),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(30),
                         ),
                       ),
                       hoverColor: Colors.red,
@@ -108,35 +108,36 @@ class AddCinemaScreen extends StatelessWidget {
                   },
 
                   initialSelection: Colors.amber, //Color(0xFF382F42),
-                  label: Text('Жанр'),
+                  label: const Text('Жанр'),
                   width: 180, //width: double.infinity,
                   dropdownMenuEntries: <DropdownMenuEntry>[
-                    DropdownMenuEntry(
+                    const DropdownMenuEntry(
                       value: null,
                       label: 'Все',
                     ),
-                    DropdownMenuEntry(
+                    const DropdownMenuEntry(
                         value: Categories.Fantasy, label: 'Фантастика'),
-                    DropdownMenuEntry(
+                    const DropdownMenuEntry(
                         value: Categories.Action, label: 'Боевик'),
-                    DropdownMenuEntry(value: Categories.Drama, label: 'Драма'),
-                    DropdownMenuEntry(
+                    const DropdownMenuEntry(
+                        value: Categories.Drama, label: 'Драма'),
+                    const DropdownMenuEntry(
                         value: Categories.Thriller, label: 'Триллер'),
-                    DropdownMenuEntry(
+                    const DropdownMenuEntry(
                         value: Categories.History, label: 'История'),
                   ],
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 25.0),
+                padding: const EdgeInsets.only(top: 25.0),
                 child: MaterialButton(
-                  shape: CircleBorder(),
-                  child: Icon(
+                  shape: const CircleBorder(),
+                  child: const Icon(
                     Icons.add,
                     size: 35,
                     color: Color.fromARGB(255, 0, 174, 255),
                   ),
-                  color: Color(0xFF382F42),
+                  color: const Color(0xFF382F42),
                   onPressed: () {},
                   //color: Theme.of(context).canvasColor,
                   height: 75,

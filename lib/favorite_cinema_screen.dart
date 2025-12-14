@@ -1,10 +1,9 @@
-import 'package:cinema_filter_app/models/cinema_model.dart';
 import 'package:flutter/material.dart';
 
 class FavoriteCinemaScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

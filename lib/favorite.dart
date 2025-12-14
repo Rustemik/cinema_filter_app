@@ -14,7 +14,7 @@ class FavoritePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Center(
+        title: const Center(
           child: Text(
             'Избранное',
             style: TextStyle(
@@ -35,14 +35,14 @@ class FavoritePage extends StatelessWidget {
                   return Stack(
                     children: [
                       Padding(
-                        padding: EdgeInsets.all(15),
+                        padding: const EdgeInsets.all(15),
                         child: Container(
-                          padding: EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(10),
                           width: double.infinity,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            color: Color.fromARGB(255, 215, 215, 215),
-                            boxShadow: [
+                            color: const Color.fromARGB(255, 215, 215, 215),
+                            boxShadow: const [
                               BoxShadow(
                                 color: Color.fromARGB(255, 0, 174, 255),
                                 blurRadius: 6,
@@ -65,18 +65,18 @@ class FavoritePage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              SizedBox(width: 20),
+                              const SizedBox(width: 20),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
                                   Text(
                                     favoriteItem.name,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  SizedBox(width: 5),
+                                  const SizedBox(width: 5),
                                   Text(
                                     favoriteItem.category.name,
                                     style: TextStyle(
@@ -85,7 +85,7 @@ class FavoritePage extends StatelessWidget {
                                       color: Colors.grey.shade800,
                                     ),
                                   ),
-                                  SizedBox(width: 5),
+                                  const SizedBox(width: 5),
                                   Text(
                                     favoriteItem.release,
                                     style: TextStyle(
@@ -94,7 +94,7 @@ class FavoritePage extends StatelessWidget {
                                       color: Colors.grey.shade700,
                                     ),
                                   ),
-                                  SizedBox(width: 5),
+                                  const SizedBox(width: 5),
                                   Text(
                                     favoriteItem.time,
                                     style: TextStyle(
@@ -117,11 +117,11 @@ class FavoritePage extends StatelessWidget {
                             provider.toggleFavorites(word[index]);
                           },
                           icon: provider.isExist(word[index])
-                              ? Icon(
+                              ? const Icon(
                                   Icons.favorite,
                                   color: Color.fromARGB(255, 0, 174, 255),
                                 )
-                              : Icon(Icons.favorite_border),
+                              : const Icon(Icons.favorite_border),
                         ),
                       ),
                     ],

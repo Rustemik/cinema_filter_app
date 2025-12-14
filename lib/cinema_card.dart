@@ -25,14 +25,14 @@ class _CinemaCardState extends State<CinemaCard> {
     return Stack(
       children: [
         Padding(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           child: Container(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: Color.fromARGB(255, 215, 215, 215),
-              boxShadow: [
+              color: const Color.fromARGB(255, 215, 215, 215),
+              boxShadow: const [
                 BoxShadow(
                   color: Colors.grey,
                   blurRadius: 8,
@@ -44,7 +44,7 @@ class _CinemaCardState extends State<CinemaCard> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   width: 65,
                   height: 100,
                   decoration: BoxDecoration(
@@ -60,12 +60,12 @@ class _CinemaCardState extends State<CinemaCard> {
                   children: [
                     Text(
                       widget.model.name,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                     Text(
                       widget.model.category.name,
                       style: TextStyle(
@@ -74,7 +74,7 @@ class _CinemaCardState extends State<CinemaCard> {
                         color: Colors.grey.shade800,
                       ),
                     ),
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                     Text(
                       widget.model.release,
                       style: TextStyle(
@@ -83,7 +83,7 @@ class _CinemaCardState extends State<CinemaCard> {
                         color: Colors.grey.shade700,
                       ),
                     ),
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                     Text(
                       widget.model.time,
                       style: TextStyle(
@@ -105,7 +105,7 @@ class _CinemaCardState extends State<CinemaCard> {
             unCheckColor: appBarcolor,
             checkedIcon: Icons.favorite,
             uncheckedIcon: Icons.favorite_border_sharp,
-            checkColor: Color.fromARGB(255, 0, 174, 255),
+            checkColor: const Color.fromARGB(255, 0, 174, 255),
             value: provider.favorites.contains(widget.model),
             onChanged: (value) {
               provider.toggleFavorites(widget.model);
